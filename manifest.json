@@ -1,0 +1,20 @@
+{
+	"name":"Language Replace",
+    "description": "An extension to replace chosen words with words you want. Can be used to forcefully learn a language",
+	"author":"Strea__",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions":["scripting", "activeTab", "storage"],
+    "content_scripts":[{
+        "matches":["<all_urls>"],
+        "exclude_matches":["https://docs.google.com/*"],
+        "js":["content-script.js"]
+    }],
+    "background":{
+        "service_worker": "get-data.js"
+    },
+	"action": {
+    "default_popup": "popup.html"
+  	}
+
+}
